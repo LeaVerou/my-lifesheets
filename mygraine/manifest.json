@@ -1,0 +1,16 @@
+{
+	"$schema": "https://json.schemastore.org/web-manifest-combined.json",
+	"name": "mygraine",
+	"short_name": "mygraine",
+	"start_url": "https://leaverou.lifesheets.app/mygraine",
+	"display": "standalone",
+	"background_color": "#a00808",
+	"description": "migraine tracker",
+	"icons": [
+		{
+			"src": "data:image/svg+xml,<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 100 100\"><text style=\"font-size: 80px\" x=\"50%\" y=\".85em\" dominant-baseline=\"middle\" text-anchor=\"middle\">🤕</text></svg>",
+			"sizes": "any",
+			"type": "image/svg+xml"
+		}
+	]
+}
