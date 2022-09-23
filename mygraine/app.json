@@ -229,7 +229,8 @@
 			"type": "chart",
 			"scope": "charts",
 			"settings": {
-				"group_by": "weekday"
+				"group_by": "weekday",
+				"type": "bar"
 			}
 		},
 		{
