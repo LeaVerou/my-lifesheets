@@ -54,7 +54,7 @@
 			"settings": {
 				"prefix": " at ",
 				"type": "time",
-				"default": "[time($startup, 'hours')]",
+				"default": "[time($now)]",
 				"format": "[time(time, 'minutes')]"
 			},
 			"name": "time"
