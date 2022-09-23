@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	
+	<title>CrimsonTide: period tracker</title>
+	<link rel="icon" href='data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><text style="font-size: 80px" x="50%" y=".85em" dominant-baseline="middle" text-anchor="middle">🩸</text></svg>'>
+	<link rel="stylesheet" href="https://get.mavo.io/mavo.css">
+	<link rel="stylesheet" href="../style.css">
+	<style>
+		:root {
+			--accent-color: #5f112c;
+			--icon: "🩸";
+		}
+		
+	</style>
+	<link rel="manifest" href="manifest.json">
+	<script type="module" src="https://projects.verou.me/h-chart/src/h-chart.js"></script>
+	<script type="module" src="https://nudeui.com/index.js"></script>
+</head>
+<body mv-app="lifesheet" class="mv-autoedit" mv-storage="https://github.com/LeaVerou/my-lifesheets/crimsontide/data.json">
+	<header>
+		<h1>
+			<span class="app-icon">🩸</span>
+			<span class="app-name">CrimsonTide</span>
+		</h1>
+		<h2>period tracker</h2>
+		<div class="mv-bar mv-ui"><a href="#entries" class="mv-button custom entries">Entries</a></div>
+	</header>
+
+	<main class="charts-first">
+		<a id=stats></a>
+			<div class="chart-row">
+				<figure data-type="chart" class="chart appearance-stretch type-bar" style="min-width: min(300px, 100vw)">
+	
+	<h-chart id="chart18" type="bar" x="b">
+		<table>
+			<thead>
+				<tr>
+					<th hc-name="a">Month</th>
+					<th hc-name="b">Average cycle_duration</th>
+				</tr>
+			</thead>
+			<tbody mv-list="chart18" mv-value="groupBy(entry.cycle_duration, readable_datetime(entry.date, 'month'))">
+				<tr mv-list-item mv-group>
+					<td>[$value]</td>
+					<td>[average($items)]</td>
+				</tr>
+			</tbody>
+		</table>
+	</h-chart><script>chart18.xFormat = $result => {
+						try {
+							let $fn = Mavo.Script.$fn;
+							let $this = Mavo.all[0]?.root.getLiveData() ?? {};
+							return ($fn.duration.call($this, $result, "days"));
+						}
+						catch (e) {
+							console.warn(e);
+							return $result;
+						}
+					};</script>
+	<figcaption>Average cycle_duration per month</figcaption></figure>
+				<figure data-type="chart" class="chart appearance-stretch type-calendar" style="min-width: min(300px, 100vw)">
+	<nd-calendar id="chart19" mv-list="chart19" mv-value="entry">
+				<time datetime="[chart19.date & if(chart19.end_date, ' / ' & chart19.end_date)]"></time>
+			</nd-calendar>
+	<figcaption></figcaption></figure>
+			</div>
+		<a id=entries></a>
+			<div class="field-row">
+				<button data-type="action" data-show="edit" mv-action="add(entry)">🩸 Period started</button>
+				<button data-type="action" mv-action="add(entry)">🎉 Period ended!</button>
+				<span property="average_cycle" data-type="expression" data-show="false" mv-value="average(cycle_duration)"></span>
+				<span data-type="expression" data-prefix="Average cycle length: " mv-value="duration(average_cycle, 'days')"></span>
+				<span property="next_period" data-type="expression" data-show="false" mv-value="date(last(end_date) + average_cycle)"></span>
+				<span data-type="expression" data-prefix="/ Next period in " mv-value="duration(next_period - $today, 'days')"></span>
+			</div>
+		<section mv-list="entry">
+			<article mv-list-item class="entry">
+				<header class="field-row">
+					<span property="weekday" data-type="expression" mv-value="weekday(date, 'shortname')"></span>
+					<time property="date" data-type="property" mv-default="[$today]" mv-edit-type="inline" mv-editor-type="date" class="bold type-date"></time>
+					<time property="end_date" data-type="property" data-prefix=" to " mv-edit-type="inline" mv-editor-type="date" mv-editor-min="[date]" class="type-date"></time>
+					<span property="duration" data-type="expression" data-show="false" mv-value="end_date - date + 1 * day()"></span>
+					<span property="duration_readable" data-type="expression" data-prefix="Period lasted " data-suffix="[if($index > 0, ', ')]" data-show="[process_visible(end_date)]" mv-value="duration(duration, 2)"></span>
+					<span property="cycle_duration_readable" data-type="expression" data-prefix="Cycle lasted " data-show="[process_visible($index > 0)]" mv-value="duration(cycle_duration, 'days')"></span>
+					<span property="cycle_duration" data-type="expression" data-show="false" mv-value="date - $previous.date"></span>
+					<span data-type="spacer" class="appearance-stretch"></span>
+					<meter-discrete property="flow" data-type="property" mv-default="3" min="1" max="5" step="1" mv-edit-as="meter" icon="🩸" class="type-number bar"></meter-discrete>
+					<meter-discrete property="pain" data-type="property" mv-default="1" min="1" max="5" step="1" mv-edit-as="meter" icon="🥴" class="type-number bar"></meter-discrete>
+				</header>
+				<div property="notes" data-type="property" class="appearance-line type-text"></div>
+			</article>
+		</section>
+	</main>
+
+	<script src="https://get.mavo.io/mavo.js"></script>
+	<script>
+		Mavo.Functions.process_visible = function (value) {
+			value = Mavo.value(value);
+			return ["true", "false", "edit", "read"].includes(value) ? value : Boolean(value);
+		}; 
+	</script>
+</body>
+</html>
