@@ -51,6 +51,23 @@
 		</table>
 	</h-chart>
 	<figcaption>Average intensity per month</figcaption></figure>
+				<figure data-type="chart" class="chart appearance-stretch type-table" style="min-width: min(300px, 100vw)">
+	
+		<table>
+			<thead>
+				<tr>
+					<th hc-name="a">Weekday</th>
+					<th hc-name="b">Number of migraines</th>
+				</tr>
+			</thead>
+			<tbody mv-list="chart20" mv-value="groupBy(entry.entry, weekday(entry.date))">
+				<tr mv-list-item mv-group>
+					<td>[$value]</td>
+					<td>[count($items)]</td>
+				</tr>
+			</tbody>
+		</table>
+	<figcaption>Number of migraines per weekday</figcaption></figure>
 				<figure data-type="chart" class="chart appearance-stretch type-pie" style="min-width: min(300px, 100vw)">
 	
 	<h-chart id="chart18" type="pie" x="b">
