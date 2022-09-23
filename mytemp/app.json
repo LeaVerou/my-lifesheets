@@ -130,7 +130,7 @@
 			"type": "chart",
 			"scope": "charts",
 			"settings": {
-				"type": "table",
+				"type": "line",
 				"aggregate": "average",
 				"group_by": "hour",
 				"aggregate_of": "temperature"
