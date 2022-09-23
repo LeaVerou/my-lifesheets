@@ -32,8 +32,9 @@
 	<main class="charts-first">
 		<a id=stats></a>
 			<div class="chart-row">
-				<figure data-type="chart" class="chart appearance-stretch type-table" style="min-width: min(300px, 100vw)">
+				<figure data-type="chart" class="chart appearance-stretch type-line" style="min-width: min(300px, 100vw)">
 	
+	<h-chart id="chart10" type="line" x="a">
 		<table>
 			<thead>
 				<tr>
@@ -41,13 +42,14 @@
 					<th hc-name="b">Average temperature</th>
 				</tr>
 			</thead>
-			<tbody mv-list="chart10" mv-value="groupBy(entry.temperature, readable_datetime(entry.date, 'hour'))">
+			<tbody mv-list="chart10" mv-value="groupBy(entry.temperature, readable_datetime(entry.date_time, 'hour'))">
 				<tr mv-list-item mv-group>
 					<td>[$value]</td>
 					<td>[average($items)]</td>
 				</tr>
 			</tbody>
 		</table>
+	</h-chart>
 	<figcaption>Average temperature per hour</figcaption></figure>
 			</div>
 		<a id=entries></a>
