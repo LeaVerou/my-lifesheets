@@ -1,0 +1,16 @@
+{
+	"mytemp": {
+		"name": "MyTemp",
+		"slug": "mytemp",
+		"entry_name": "measurement",
+		"entries_name": "measurements",
+		"description": "fever tracker",
+		"private": false,
+		"icon": "🤒",
+		"color": "#e47d07",
+		"storage_type": "",
+		"storage": "",
+		"custom_css": "",
+		"charts_placement": ""
+	}
+}
