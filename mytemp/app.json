@@ -133,7 +133,10 @@
 				"type": "line",
 				"aggregate": "average",
 				"group_by": "hour",
-				"aggregate_of": "temperature"
+				"aggregate_of": "temperature",
+				"min": 36,
+				"smooth": true,
+				"area": false
 			}
 		}
 	]
