@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	
+	<title>MyLife: entry tracker</title>
+	<link rel="icon" href='data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><text style="font-size: 80px" x="50%" y=".85em" dominant-baseline="middle" text-anchor="middle">😀</text></svg>'>
+	<link rel="stylesheet" href="https://get.mavo.io/mavo.css">
+	<link rel="stylesheet" href="../style.css">
+	<style>
+		:root {
+			--accent-color: #0cc4e9;
+			--icon: "😀";
+		}
+		
+	</style>
+	<link rel="manifest" href="manifest.json">
+	<script type="module" src="https://projects.verou.me/h-chart/src/h-chart.js"></script>
+	<script type="module" src="https://nudeui.com/index.js"></script>
+</head>
+<body mv-app="lifesheet" class="mv-autoedit" mv-storage="https://github.com/LeaVerou/my-lifesheets/mylife/data.json">
+	<header>
+		<h1>
+			<span class="app-icon">😀</span>
+			<span class="app-name">MyLife</span>
+		</h1>
+		<h2>entry tracker</h2>
+		<div class="mv-bar mv-ui"></div>
+	</header>
+
+	<main class="charts-first">
+		<a id=stats></a>
+			
+		<a id=entries></a>
+			<div class="field-row">
+				<button data-type="action" data-show="edit" mv-action="add(entry)">➕ Add entry</button>
+			</div>
+		<section mv-list="entry">
+			<article mv-list-item class="entry">
+				<header class="field-row">
+					<span property="weekday" data-type="expression" mv-value="weekday(date, 'shortname')"></span>
+					<time property="date" data-type="property" mv-default="[$today]" mv-edit-type="inline" mv-editor-type="date" class="bold type-date"></time>
+				</header>
+				<div property="notes" data-type="property" class="appearance-line type-text"></div>
+				<div class="field-row">
+					<cycle-toggle property="field2" data-type="property" mv-edit-as="formControl" class="type-toggle"><span>✅</span>
+<span>❎</span></cycle-toggle>
+				</div>
+			</article>
+		</section>
+	</main>
+
+	<script src="https://get.mavo.io/mavo.js"></script>
+	<script>
+		Mavo.Functions.process_visible = function (value) {
+			value = Mavo.value(value);
+			return ["true", "false", "edit", "read"].includes(value) ? value : Boolean(value);
+		}; 
+	</script>
+</body>
+</html>
