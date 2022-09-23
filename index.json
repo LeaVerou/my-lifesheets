@@ -12,5 +12,19 @@
 		"storage": "",
 		"custom_css": "",
 		"charts_placement": ""
+	},
+	"mylife": {
+		"name": "MyLife",
+		"slug": "mylife",
+		"entry_name": "entry",
+		"entries_name": "entries",
+		"description": "entry tracker",
+		"private": false,
+		"icon": "😀",
+		"color": "#0cc4e9",
+		"storage_type": "",
+		"storage": "",
+		"custom_css": "",
+		"charts_placement": ""
 	}
 }
