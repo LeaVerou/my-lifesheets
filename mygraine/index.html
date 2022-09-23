@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	
+	<title>mygraine: migraine tracker</title>
+	<link rel="icon" href='data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><text style="font-size: 80px" x="50%" y=".85em" dominant-baseline="middle" text-anchor="middle">🤕</text></svg>'>
+	<link rel="stylesheet" href="https://get.mavo.io/mavo.css">
+	<link rel="stylesheet" href="../style.css">
+	<style>
+		:root {
+			--accent-color: #a00808;
+			--icon: "🤕";
+		}
+		
+	</style>
+	<link rel="manifest" href="manifest.json">
+	<script type="module" src="https://projects.verou.me/h-chart/src/h-chart.js"></script>
+	<script type="module" src="https://nudeui.com/index.js"></script>
+</head>
+<body mv-app="lifesheet" class="mv-autoedit" mv-storage="https://github.com/LeaVerou/my-lifesheets/mygraine/data.json">
+	<header>
+		<h1>
+			<span class="app-icon">🤕</span>
+			<span class="app-name">mygraine</span>
+		</h1>
+		<h2>migraine tracker</h2>
+		<div class="mv-bar mv-ui"><a href="#entries" class="mv-button custom entries">Entries</a></div>
+	</header>
+
+	<main class="charts-first">
+		<a id=stats></a>
+			<div class="chart-row">
+				<figure data-type="chart" class="chart appearance-stretch type-bar" style="min-width: min(300px, 100vw)">
+	
+	<h-chart id="chart17" type="bar" x="b">
+		<table>
+			<thead>
+				<tr>
+					<th hc-name="a">Month</th>
+					<th hc-name="b">Average intensity</th>
+				</tr>
+			</thead>
+			<tbody mv-list="chart17" mv-value="groupBy(entry.intensity, readable_datetime(entry.date_time, 'month'))">
+				<tr mv-list-item mv-group>
+					<td>[$value]</td>
+					<td>[average($items)]</td>
+				</tr>
+			</tbody>
+		</table>
+	</h-chart>
+	<figcaption>Average intensity per month</figcaption></figure>
+				<figure data-type="chart" class="chart appearance-stretch type-pie" style="min-width: min(300px, 100vw)">
+	
+	<h-chart id="chart18" type="pie" x="b">
+		<table>
+			<thead>
+				<tr>
+					<th hc-name="a">Side</th>
+					<th hc-name="b">Number of migraines</th>
+				</tr>
+			</thead>
+			<tbody mv-list="chart18" mv-value="sort(groupBy(entry.entry, entry.side), '$value')">
+				<tr mv-list-item mv-group>
+					<td>[$value]</td>
+					<td>[count($items)]</td>
+				</tr>
+			</tbody>
+		</table>
+	</h-chart>
+	<figcaption>Number of migraines per side value</figcaption></figure>
+			</div>
+		<a id=entries></a>
+			<span data-type="expression" data-suffix=" since last migraine" mv-value="duration($now - last(end_date_time))" class="appearance-line"></span>
+			<div class="field-row">
+				<button data-type="action" data-show="edit" mv-action="add(entry)" class="appearance-stretch">➕ Start migraine</button>
+				<button data-type="action" mv-action="set(last(entry), end_time: time($now))" class="appearance-stretch">End migraine</button>
+			</div>
+		<section mv-list="entry">
+			<article mv-list-item class="entry">
+				<header class="field-row">
+					<span property="weekday" data-type="expression" mv-value="weekday(date, 'shortname')"></span>
+					<time property="date" data-type="property" mv-default="[$today]" mv-edit-type="inline" mv-editor-type="date" class="bold type-date"></time>
+					<time property="time" data-type="property" data-prefix=" at " mv-default="[time($startup, 'hours')]" mv-edit-type="inline" mv-editor-type="time" class="type-time"></time>
+					<span property="date_time" data-type="expression" data-show="false" mv-value="datetime(date, time)"></span>
+					<time property="end_time" data-type="property" data-prefix=" to " data-show="[process_visible(time)]" mv-edit-type="inline" mv-editor-type="time" class="type-time"></time>
+					<time property="end_date" data-type="property" data-prefix=" on " data-show="[process_visible(if(time and end_time, if(end_date = date, 'edit', true), false))]" mv-default="[if(end_time, if(end_time < time, date(date + 1 * days()), date))]" mv-edit-type="inline" mv-editor-type="date" mv-editor-min="[date]" class="type-date"></time>
+					<span property="end_date_time" data-type="expression" data-show="false" mv-value="datetime(end_date, end_time)"></span>
+					<span property="duration" data-type="expression" data-show="false" mv-value="end_date_time - date_time"></span>
+					<span property="duration_readable" data-type="expression" data-prefix="(" data-suffix=")" data-show="[process_visible(end_date and (time and end_time))]" mv-value="duration(duration, 2)"></span>
+					<span data-type="spacer" class="appearance-stretch"></span>
+					<meter-discrete property="intensity" data-type="property" mv-default="3" min="1" max="5" step="1" mv-edit-as="meter" icon="🤕" class="type-number bar"></meter-discrete>
+					<span property="side" data-type="property" mv-options="left, right, both" class="type-options"></span>
+				</header>
+				<div property="notes" data-type="property" class="appearance-line type-text"></div>
+			</article>
+		</section>
+	</main>
+
+	<script src="https://get.mavo.io/mavo.js"></script>
+	<script>
+		Mavo.Functions.process_visible = function (value) {
+			value = Mavo.value(value);
+			return ["true", "false", "edit", "read"].includes(value) ? value : Boolean(value);
+		}; 
+	</script>
+</body>
+</html>
