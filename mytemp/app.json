@@ -1,0 +1,139 @@
+{
+	"app": {
+		"name": "MyTemp",
+		"slug": "mytemp",
+		"entry_name": "measurement",
+		"entries_name": "measurements",
+		"description": "fever tracker",
+		"private": false,
+		"icon": "🤒",
+		"color": "#e47d07",
+		"storage_type": "",
+		"storage": "",
+		"custom_css": "",
+		"charts_placement": ""
+	},
+	"temporal": {
+		"times": "yes",
+		"ranges": ""
+	},
+	"entry": [
+		{
+			"type": "expression",
+			"scope": "entry",
+			"flags": [
+				"temporal",
+				"deletable"
+			],
+			"settings": {
+				"expression": "weekday(date, 'shortname')"
+			},
+			"name": "weekday"
+		},
+		{
+			"type": "property",
+			"scope": "entry",
+			"flags": [
+				"temporal"
+			],
+			"settings": {
+				"type": "date",
+				"default": "[$today]",
+				"formatting": [
+					"b"
+				]
+			},
+			"name": "date"
+		},
+		{
+			"type": "property",
+			"scope": "entry",
+			"flags": [
+				"temporal"
+			],
+			"settings": {
+				"prefix": " at ",
+				"type": "time",
+				"default": "[time($startup, 'hours')]",
+				"format": "[time(time, 'minutes')]"
+			},
+			"name": "time"
+		},
+		{
+			"type": "expression",
+			"scope": "entry",
+			"flags": [
+				"temporal"
+			],
+			"settings": {
+				"visible": "false",
+				"expression": "datetime(date, time)"
+			},
+			"name": "date_time"
+		},
+		{
+			"type": "spacer",
+			"scope": "entry",
+			"settings": {}
+		},
+		{
+			"type": "property",
+			"scope": "entry",
+			"settings": {
+				"suffix": "℃",
+				"default": "",
+				"formatting": [
+					"b"
+				]
+			},
+			"name": "temperature"
+		},
+		{
+			"type": "expression",
+			"scope": "entry",
+			"settings": {
+				"visible": "[$previous.temperature]",
+				"expression": "temperature - $previous.temperature",
+				"prefix": "['(' & if (delta > 0, '+')]",
+				"suffix": "℃)"
+			},
+			"name": "delta"
+		},
+		{
+			"type": "property",
+			"scope": "entry",
+			"settings": {
+				"type": "text",
+				"appearance": "line",
+				"multiline": true
+			},
+			"name": "notes"
+		}
+	],
+	"root": [
+		{
+			"type": "action",
+			"scope": "root",
+			"settings": {
+				"visible": "edit",
+				"label": "➕ Add measurement",
+				"target": "add(entry)",
+				"target_preset": "new",
+				"appearance": "",
+				"set_pairs": [],
+				"filter_pairs": []
+			}
+		}
+	],
+	"charts": [
+		{
+			"type": "chart",
+			"scope": "charts",
+			"settings": {
+				"type": "line",
+				"aggregate": "average",
+				"group_by": "hour"
+			}
+		}
+	]
+}
