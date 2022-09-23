@@ -1,0 +1,503 @@
+{
+	"entry": [
+		{
+			"date": "2021-08-02",
+			"time": "06:30",
+			"end_time": "11:00",
+			"end_date": "2021-08-02",
+			"intensity": 2,
+			"side": "right"
+		},
+		{
+			"date": "2021-08-06",
+			"time": "13:30",
+			"end_time": "17:30",
+			"end_date": "2021-08-06",
+			"intensity": 2,
+			"side": "right"
+		},
+		{
+			"date": "2021-08-08",
+			"time": "20:50",
+			"side": "left"
+		},
+		{
+			"date": "2021-08-12",
+			"time": "13:30"
+		},
+		{
+			"date": "2021-08-17",
+			"time": "01:30",
+			"end_time": "05:30",
+			"end_date": "2021-08-17",
+			"intensity": 2,
+			"side": "left"
+		},
+		{
+			"date": "2021-08-21",
+			"time": "21:00",
+			"end_time": "01:00",
+			"end_date": "2021-08-22",
+			"intensity": 3,
+			"side": "left"
+		},
+		{
+			"date": "2021-08-28",
+			"time": "18:00",
+			"end_time": "20:45",
+			"end_date": "2021-08-28",
+			"intensity": 2,
+			"side": "right"
+		},
+		{
+			"date": "2021-09-13",
+			"time": "14:40",
+			"side": "left",
+			"notes": "Strong headache since 9:30am",
+			"end_time": "16:30",
+			"end_date": "2021-09-13",
+			"intensity": 2
+		},
+		{
+			"date": "2021-09-16",
+			"time": "16:15",
+			"end_time": "19:45",
+			"end_date": "2021-09-16"
+		},
+		{
+			"date": "2021-09-19",
+			"time": "10:00",
+			"end_time": "15:00",
+			"end_date": "2021-09-19"
+		},
+		{
+			"date": "2021-09-21",
+			"side": "left",
+			"notes": "Times approximate.",
+			"time": "23:00",
+			"end_time": "02:00",
+			"end_date": "2021-09-22"
+		},
+		{
+			"date": "2021-09-22",
+			"time": "11:00",
+			"end_time": "14:00",
+			"end_date": "2021-09-22",
+			"intensity": 2,
+			"side": "left"
+		},
+		{
+			"date": "2021-09-27",
+			"time": "14:35",
+			"end_time": "15:05",
+			"end_date": "2021-09-27",
+			"intensity": 1,
+			"side": "left"
+		},
+		{
+			"date": "2021-09-29",
+			"time": "23:25",
+			"end_time": "01:30",
+			"end_date": "2021-09-30",
+			"intensity": 1,
+			"side": "left",
+			"notes": "End time approximate. "
+		},
+		{
+			"date": "2021-10-05",
+			"time": "11:00",
+			"end_time": "15:00",
+			"end_date": "2021-10-05",
+			"intensity": 3,
+			"side": "left",
+			"notes": "Woke with"
+		},
+		{
+			"date": "2021-10-08",
+			"time": "20:00",
+			"end_time": "00:00",
+			"end_date": "2021-10-09",
+			"intensity": 1,
+			"side": "left"
+		},
+		{
+			"date": "2021-10-27",
+			"time": "08:45",
+			"end_time": "13:15",
+			"end_date": "2021-10-27",
+			"intensity": 2,
+			"side": "left"
+		},
+		{
+			"date": "2021-11-05",
+			"time": "10:30",
+			"intensity": 3,
+			"side": "left",
+			"end_time": "15:00",
+			"end_date": "2021-11-05"
+		},
+		{
+			"date": "2021-11-10",
+			"time": "09:30",
+			"end_time": "14:15",
+			"end_date": "2021-11-10",
+			"intensity": 2,
+			"side": "right"
+		},
+		{
+			"date": "2021-11-12",
+			"time": "11:45",
+			"end_time": "15:00",
+			"end_date": "2021-11-12",
+			"intensity": 3,
+			"side": "right"
+		},
+		{
+			"date": "2021-11-15",
+			"time": "15:45",
+			"end_time": "20:00",
+			"end_date": "2021-11-15",
+			"intensity": 2,
+			"side": "right"
+		},
+		{
+			"date": "2021-11-18",
+			"time": "18:10",
+			"end_time": "23:00",
+			"end_date": "2021-11-18",
+			"intensity": 1,
+			"side": "both",
+			"notes": "Started on left, then moved to right. "
+		},
+		{
+			"date": "2021-11-21",
+			"time": "16:45",
+			"end_time": "21:00",
+			"end_date": "2021-11-21",
+			"intensity": 2,
+			"side": "right"
+		},
+		{
+			"date": "2021-11-23",
+			"time": "04:20",
+			"intensity": 3,
+			"side": "left"
+		},
+		{
+			"date": "2021-12-02",
+			"time": "10:00",
+			"end_time": "16:10",
+			"end_date": "2021-12-02",
+			"intensity": 3,
+			"side": "left"
+		},
+		{
+			"date": "2021-12-08",
+			"time": "11:00",
+			"end_time": "17:30",
+			"end_date": "2021-12-08",
+			"intensity": 2,
+			"side": "left"
+		},
+		{
+			"date": "2021-12-11",
+			"time": "19:30",
+			"end_time": "23:00",
+			"end_date": "2021-12-11",
+			"intensity": 2,
+			"side": "right"
+		},
+		{
+			"date": "2021-12-12",
+			"time": "19:50",
+			"end_time": "23:30",
+			"end_date": "2021-12-12",
+			"intensity": 1,
+			"side": "left"
+		},
+		{
+			"date": "2021-12-19",
+			"time": "01:45",
+			"end_time": "05:00",
+			"end_date": "2021-12-19",
+			"intensity": 2,
+			"side": "right"
+		},
+		{
+			"date": "2021-12-21",
+			"time": "02:30",
+			"end_time": "05:00",
+			"end_date": "2021-12-21",
+			"intensity": 2,
+			"side": "right"
+		},
+		{
+			"date": "2021-12-29",
+			"time": "11:30",
+			"end_time": "18:30",
+			"end_date": "2021-12-29",
+			"intensity": 2,
+			"side": "left",
+			"notes": "Preceded by left sided headaches since 5pm the day before. "
+		},
+		{
+			"date": "2022-01-02",
+			"time": "15:10",
+			"end_time": "18:49",
+			"end_date": "2022-01-02",
+			"intensity": 1,
+			"side": "left",
+			"notes": "On waking"
+		},
+		{
+			"date": "2022-01-10",
+			"time": "08:30",
+			"end_time": "15:00",
+			"end_date": "2022-01-10",
+			"intensity": 4,
+			"side": "left",
+			"notes": "Woke me up."
+		},
+		{
+			"date": "2022-01-24",
+			"time": "20:10",
+			"end_time": "23:40",
+			"end_date": "2022-01-24",
+			"intensity": 1,
+			"side": "left"
+		},
+		{
+			"date": "2022-01-25",
+			"time": "12:20",
+			"end_time": "19:00",
+			"end_date": "2022-01-25",
+			"intensity": 2,
+			"side": "left"
+		},
+		{
+			"date": "2022-02-03",
+			"time": "06:40",
+			"end_time": "12:15",
+			"end_date": "2022-02-03",
+			"intensity": 2,
+			"side": "left"
+		},
+		{
+			"date": "2022-02-11",
+			"time": "06:00",
+			"end_time": "12:15",
+			"end_date": "2022-02-11",
+			"intensity": 2,
+			"side": "left",
+			"notes": "Woke up from migraine"
+		},
+		{
+			"date": "2022-02-16",
+			"time": "20:30",
+			"end_time": "01:00",
+			"end_date": "2022-02-17"
+		},
+		{
+			"date": "2022-02-22",
+			"time": "22:05",
+			"intensity": 3,
+			"side": "left",
+			"notes": "After dinner, rapid onset, slow decline.",
+			"end_time": "06:00",
+			"end_date": "2022-02-23"
+		},
+		{
+			"date": "2022-02-28",
+			"time": "10:00",
+			"intensity": 2,
+			"side": "left",
+			"end_time": "16:00",
+			"end_date": "2022-02-28"
+		},
+		{
+			"date": "2022-03-02",
+			"time": "04:15",
+			"end_time": "09:30",
+			"end_date": "2022-03-02",
+			"intensity": 3,
+			"side": "left",
+			"notes": "Woke me up, immediately strong. "
+		},
+		{
+			"date": "2022-03-03",
+			"time": "08:15",
+			"end_time": "12:15",
+			"end_date": "2022-03-03"
+		},
+		{
+			"date": "2022-03-05",
+			"time": "18:15",
+			"end_time": "21:15",
+			"end_date": "2022-03-05",
+			"intensity": 1,
+			"side": "right"
+		},
+		{
+			"date": "2022-03-07",
+			"time": "07:45",
+			"intensity": 3
+		},
+		{
+			"date": "2022-03-14",
+			"time": "08:30",
+			"end_time": "13:00",
+			"end_date": "2022-03-14",
+			"intensity": 2,
+			"side": "left"
+		},
+		{
+			"date": "2022-03-17",
+			"time": "08:15"
+		},
+		{
+			"date": "2022-03-23",
+			"time": "23:00",
+			"end_time": "03:00",
+			"end_date": "2022-03-24",
+			"intensity": 1,
+			"side": "left"
+		},
+		{
+			"date": "2022-03-28",
+			"time": "20:00",
+			"end_time": "00:00",
+			"end_date": "2022-03-29",
+			"intensity": 1,
+			"side": "right"
+		},
+		{
+			"date": "2022-03-31",
+			"time": "08:30",
+			"end_time": "12:00",
+			"end_date": "2022-03-31",
+			"intensity": 2,
+			"side": "right",
+			"notes": "Grumbling for 24 hours before"
+		},
+		{
+			"date": "2022-04-04",
+			"time": "08:00",
+			"end_time": "11:00",
+			"end_date": "2022-04-04",
+			"intensity": 2,
+			"side": "left",
+			"notes": "Got a headache 3 hours later that I thought would turn into another migraine"
+		},
+		{
+			"date": "2022-04-07",
+			"time": "04:00",
+			"end_time": "08:45",
+			"end_date": "2022-04-07",
+			"intensity": 2,
+			"side": "left"
+		},
+		{
+			"date": "2022-04-12",
+			"time": "00:05",
+			"end_time": "05:00",
+			"end_date": "2022-04-12",
+			"intensity": 4,
+			"side": "left",
+			"notes": "End time approximate. "
+		},
+		{
+			"date": "2022-04-16",
+			"time": "07:00",
+			"end_time": "12:45",
+			"end_date": "2022-04-16",
+			"intensity": 2,
+			"side": "left"
+		},
+		{
+			"date": "2022-05-07",
+			"time": "00:30",
+			"end_time": "07:00",
+			"end_date": "2022-05-07",
+			"intensity": 3,
+			"side": "left"
+		},
+		{
+			"date": "2022-05-09",
+			"time": "14:30",
+			"end_time": "18:30",
+			"end_date": "2022-05-09",
+			"intensity": 1,
+			"side": "left"
+		},
+		{
+			"date": "2022-05-28",
+			"time": "14:50"
+		},
+		{
+			"date": "2022-06-03",
+			"time": "07:30",
+			"end_time": "12:30",
+			"end_date": "2022-06-03",
+			"notes": "End time approximate. "
+		},
+		{
+			"date": "2022-06-06"
+		},
+		{
+			"date": "2022-06-11",
+			"time": "09:15",
+			"intensity": 3,
+			"side": "left",
+			"notes": "Ended at 4"
+		},
+		{
+			"date": "2022-06-14",
+			"time": "05:30",
+			"end_time": "11:30",
+			"end_date": "2022-06-14",
+			"intensity": 3,
+			"side": "left"
+		},
+		{
+			"date": "2022-06-20",
+			"time": "22:00",
+			"end_time": "06:30",
+			"end_date": "2022-06-21",
+			"intensity": 4,
+			"side": "left",
+			"notes": "Fast onset, substantial migraine aura"
+		},
+		{
+			"date": "2022-07-03",
+			"time": "09:30",
+			"end_time": "15:30",
+			"end_date": "2022-07-03",
+			"intensity": 2,
+			"side": "left"
+		},
+		{
+			"date": "2022-07-09",
+			"time": "02:00",
+			"end_time": "06:00",
+			"end_date": "2022-07-09",
+			"intensity": 2,
+			"side": "left"
+		},
+		{
+			"date": "2022-07-21",
+			"time": "21:00",
+			"end_time": "01:00",
+			"end_date": "2022-07-22",
+			"intensity": 2,
+			"side": "right"
+		},
+		{
+			"date": "2022-07-29",
+			"time": "20:35",
+			"end_time": "23:25",
+			"end_date": "2022-07-29",
+			"intensity": 1,
+			"side": "right"
+		}
+	]
+}
