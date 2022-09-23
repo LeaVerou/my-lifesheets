@@ -51,8 +51,9 @@
 		</table>
 	</h-chart>
 	<figcaption>Average intensity per month</figcaption></figure>
-				<figure data-type="chart" class="chart appearance-stretch type-table" style="min-width: min(300px, 100vw)">
+				<figure data-type="chart" class="chart appearance-stretch type-bar" style="min-width: min(300px, 100vw)">
 	
+	<h-chart id="chart18" type="bar" x="b">
 		<table>
 			<thead>
 				<tr>
@@ -60,17 +61,18 @@
 					<th hc-name="b">Number of migraines</th>
 				</tr>
 			</thead>
-			<tbody mv-list="chart20" mv-value="groupBy(entry.entry, weekday(entry.date))">
+			<tbody mv-list="chart18" mv-value="groupBy(entry.entry, weekday(entry.date, 'shortname'))">
 				<tr mv-list-item mv-group>
 					<td>[$value]</td>
 					<td>[count($items)]</td>
 				</tr>
 			</tbody>
 		</table>
+	</h-chart>
 	<figcaption>Number of migraines per weekday</figcaption></figure>
 				<figure data-type="chart" class="chart appearance-stretch type-pie" style="min-width: min(300px, 100vw)">
 	
-	<h-chart id="chart18" type="pie" x="b">
+	<h-chart id="chart19" type="pie" x="b">
 		<table>
 			<thead>
 				<tr>
@@ -78,7 +80,7 @@
 					<th hc-name="b">Number of migraines</th>
 				</tr>
 			</thead>
-			<tbody mv-list="chart18" mv-value="sort(groupBy(entry.entry, entry.side), '$value')">
+			<tbody mv-list="chart19" mv-value="sort(groupBy(entry.entry, entry.side), '$value')">
 				<tr mv-list-item mv-group>
 					<td>[$value]</td>
 					<td>[count($items)]</td>
