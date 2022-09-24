@@ -31,6 +31,12 @@
 			"time": "18:20",
 			"temperature": 39.3,
 			"notes": "Took fever reducer "
+		},
+		{
+			"date": "2022-09-24",
+			"time": "06:30",
+			"temperature": 38.9,
+			"notes": "Took fever reducer"
 		}
 	]
 }
