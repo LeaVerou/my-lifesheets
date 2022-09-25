@@ -1,0 +1,176 @@
+{
+	"app": {
+		"name": "Mood",
+		"slug": "mood",
+		"entry_name": "entry",
+		"description": "entry tracker",
+		"private": false,
+		"icon": "😀",
+		"color": "#0cc4e9",
+		"storageType": "",
+		"storage": "",
+		"notes": true,
+		"entries_name": "entries"
+	},
+	"temporal": {
+		"times": "",
+		"ranges": ""
+	},
+	"entry": [
+		{
+			"type": "expression",
+			"scope": "entry",
+			"flags": [
+				"temporal",
+				"deletable"
+			],
+			"settings": {
+				"expression": "weekday(date, 'shortname')"
+			},
+			"name": "weekday"
+		},
+		{
+			"type": "property",
+			"scope": "entry",
+			"flags": [
+				"temporal"
+			],
+			"settings": {
+				"type": "date",
+				"default": "[$today]",
+				"formatting": [
+					"b"
+				]
+			},
+			"name": "date"
+		},
+		{
+			"type": "property",
+			"scope": "entry",
+			"settings": {
+				"type": "toggle",
+				"label": "😀"
+			},
+			"name": "happy"
+		},
+		{
+			"type": "property",
+			"scope": "entry",
+			"settings": {
+				"type": "toggle",
+				"label": "😐"
+			},
+			"name": "neutral"
+		},
+		{
+			"type": "property",
+			"scope": "entry",
+			"settings": {
+				"type": "toggle",
+				"label": "🙂"
+			},
+			"name": "ok"
+		},
+		{
+			"type": "property",
+			"scope": "entry",
+			"settings": {
+				"type": "toggle",
+				"label": "😔"
+			},
+			"name": "sad"
+		},
+		{
+			"type": "property",
+			"scope": "entry",
+			"settings": {
+				"type": "toggle",
+				"label": "😟"
+			},
+			"name": "worried"
+		},
+		{
+			"type": "property",
+			"scope": "entry",
+			"settings": {
+				"type": "toggle",
+				"toggle_type": "single",
+				"options": "",
+				"label": "😠"
+			},
+			"name": "angry"
+		},
+		{
+			"type": "property",
+			"scope": "entry",
+			"settings": {
+				"type": "text",
+				"appearance": "line"
+			},
+			"name": "notes"
+		}
+	],
+	"root": [
+		{
+			"type": "action",
+			"scope": "root",
+			"settings": {
+				"label": "Add entry",
+				"target": "add(entry)",
+				"target_preset": "new",
+				"appearance": "stretch",
+				"set_pairs": [],
+				"filter_pairs": []
+			}
+		},
+		{
+			"type": "expression",
+			"scope": "root",
+			"settings": {
+				"expression": "count(happy)",
+				"prefix": "😀"
+			}
+		},
+		{
+			"type": "expression",
+			"scope": "root",
+			"settings": {
+				"expression": "count(neutral)",
+				"prefix": "😐"
+			}
+		},
+		{
+			"type": "expression",
+			"scope": "root",
+			"settings": {
+				"prefix": "🙂",
+				"expression": "count(ok)"
+			}
+		},
+		{
+			"type": "expression",
+			"scope": "root",
+			"settings": {
+				"prefix": "😔",
+				"expression": "count(sad)"
+			}
+		},
+		{
+			"type": "expression",
+			"scope": "root",
+			"settings": {
+				"expression": "count(worried)",
+				"prefix": "😟"
+			}
+		},
+		{
+			"type": "expression",
+			"scope": "root",
+			"settings": {
+				"prefix": "😠",
+				"expression": "count(angry)"
+			}
+		}
+	],
+	"charts": []
+}
