@@ -26,5 +26,18 @@
 		"storage": "",
 		"custom_css": "",
 		"charts_placement": ""
+	},
+	"mood": {
+		"name": "Mood",
+		"slug": "mood",
+		"entry_name": "entry",
+		"description": "entry tracker",
+		"private": false,
+		"icon": "😀",
+		"color": "#0cc4e9",
+		"storageType": "",
+		"storage": "",
+		"notes": true,
+		"entries_name": "entries"
 	}
 }
