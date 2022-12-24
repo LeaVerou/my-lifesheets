@@ -39,5 +39,21 @@
 		"storage": "",
 		"notes": true,
 		"entries_name": "entries"
+	},
+	"childcare": {
+		"name": "Childcare",
+		"slug": "childcare",
+		"entryName": "entry",
+		"description": "childcare calculator",
+		"private": true,
+		"icon": "👶🏼",
+		"color": "#d327a5",
+		"storageType": "",
+		"storage": "",
+		"notes": true,
+		"_name": "Childcare",
+		"_entryName": "entry",
+		"entry_name": "entry",
+		"entries_name": "entries"
 	}
 }
