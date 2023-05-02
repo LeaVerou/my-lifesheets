@@ -1,1 +1,59 @@
-leaverou.lifesheets.app
+{
+	"mytemp": {
+		"name": "MyTemp",
+		"slug": "mytemp",
+		"entry_name": "measurement",
+		"entries_name": "measurements",
+		"description": "fever tracker",
+		"private": false,
+		"icon": "🤒",
+		"color": "#e47d07",
+		"storage_type": "",
+		"storage": "",
+		"custom_css": "",
+		"charts_placement": ""
+	},
+	"mylife": {
+		"name": "MyLife",
+		"slug": "mylife",
+		"entry_name": "foo",
+		"entries_name": "foos",
+		"description": "foo tracker",
+		"private": false,
+		"icon": "😀",
+		"color": "#0cc4e9",
+		"storage_type": "",
+		"storage": "",
+		"custom_css": "",
+		"charts_placement": ""
+	},
+	"mood": {
+		"name": "Mood",
+		"slug": "mood",
+		"entry_name": "entry",
+		"description": "entry tracker",
+		"private": false,
+		"icon": "😀",
+		"color": "#0cc4e9",
+		"storageType": "",
+		"storage": "",
+		"notes": true,
+		"entries_name": "entries"
+	},
+	"childcare": {
+		"name": "Childcare",
+		"slug": "childcare",
+		"entryName": "entry",
+		"description": "childcare calculator",
+		"private": true,
+		"icon": "👶🏼",
+		"color": "#d327a5",
+		"storageType": "",
+		"storage": "",
+		"notes": true,
+		"_name": "Childcare",
+		"_entryName": "entry",
+		"entry_name": "entry",
+		"entries_name": "entries"
+	}
+}
