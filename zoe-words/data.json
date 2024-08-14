@@ -1,10 +1,99 @@
 {
-	"child_name": "Zoe",
 	"birthday": "2019-07-12",
 	"entry": [
 		{
-			"date": "1970-01-02",
+			"date": "2020-10-18",
+			"english_word": [
+				"Down"
+			],
+			"greek_word": []
+		},
+		{
+			"date": "2020-11-27",
 			"english_word": [],
+			"greek_word": [
+				"Μαμά"
+			]
+		},
+		{
+			"date": "2020-11-29",
+			"english_word": [
+				"Bang"
+			],
+			"greek_word": []
+		},
+		{
+			"date": "2021-01-03",
+			"english_word": [],
+			"greek_word": [
+				"Ανανά",
+				"Ντομάτα"
+			]
+		},
+		{
+			"date": "2021-01-20",
+			"english_word": [],
+			"greek_word": [
+				"Αγκαντού (from song)"
+			]
+		},
+		{
+			"date": "2021-01-23",
+			"english_word": [
+				"Yay",
+				"No"
+			],
+			"greek_word": []
+		},
+		{
+			"date": "2021-02-24",
+			"english_word": [
+				"Daddy",
+				"Pee",
+				"Yeah",
+				"None",
+				"More",
+				"Up",
+				"Purple",
+				"Blue",
+				"Mee (cat)",
+				"New",
+				"Nose",
+				"Ball",
+				"Back",
+				"Bath",
+				"Toe",
+				"Wow",
+				"Bam",
+				"Cheese",
+				"Push"
+			],
+			"greek_word": [
+				"Μπαμπά",
+				"Νινί",
+				"Μπιμπί (βυζί)",
+				"Πιπί",
+				"Κακά",
+				"Μίι (γάτα)",
+				"Νανά (Ιωάννα)",
+				"Νταντά",
+				"Παππού",
+				"Γιαγιά",
+				"Μιμή (Μίμης)",
+				"Τουτού",
+				"Μπουμπού",
+				"Παπά",
+				"Κοκοκο",
+				"Παπαπα",
+				"Μπεεε"
+			]
+		},
+		{
+			"date": "2021-02-26",
+			"english_word": [
+				"Car",
+				"Two"
+			],
 			"greek_word": []
 		}
 	]
