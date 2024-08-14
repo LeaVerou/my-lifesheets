@@ -1,0 +1,267 @@
+{
+	"app": {
+		"name": "Zoe words",
+		"slug": "zoe-words",
+		"entry_name": "word set",
+		"entries_name": "word sets",
+		"description": "learning to speak",
+		"private": false,
+		"icon": "👶🏼",
+		"color": "#c34b85",
+		"storage_type": "",
+		"storage": "",
+		"custom_css": "",
+		"charts_placement": ""
+	},
+	"temporal": {
+		"times": "",
+		"ranges": ""
+	},
+	"entry": [
+		{
+			"type": "expression",
+			"scope": "entry",
+			"flags": [
+				"temporal",
+				"deletable"
+			],
+			"settings": {
+				"expression": "weekday(date, 'shortname')",
+				"prefix": "On "
+			},
+			"name": "weekday"
+		},
+		{
+			"type": "property",
+			"scope": "entry",
+			"flags": [
+				"temporal"
+			],
+			"settings": {
+				"type": "date",
+				"default": "[date($previous.date + 1 * day())]",
+				"formatting": [
+					"b"
+				],
+				"prefix": "",
+				"suffix": ","
+			},
+			"name": "date"
+		},
+		{
+			"type": "expression",
+			"scope": "entry",
+			"settings": {
+				"expression": "duration(date - birthday, 'months')",
+				"suffix": " old",
+				"prefix": "[child_name & \" was \"]"
+			}
+		},
+		{
+			"type": "spacer",
+			"scope": "entry",
+			"settings": {}
+		},
+		{
+			"type": "expression",
+			"scope": "entry",
+			"settings": {
+				"prefix": "",
+				"expression": "total_english_word_count + total_greek_word_count",
+				"suffix": " total words,",
+				"formatting": [
+					"b"
+				]
+			},
+			"name": "total_word_count"
+		},
+		{
+			"type": "expression",
+			"scope": "entry",
+			"settings": {
+				"expression": "english_word_count + greek_word_count",
+				"suffix": " new",
+				"formatting": [
+					"b"
+				]
+			},
+			"name": "total_new"
+		},
+		{
+			"type": "expression",
+			"scope": "entry",
+			"settings": {
+				"prefix": " 🇬🇧 ",
+				"expression": "100 * (total_english_word_count / total_word_count)",
+				"suffix": "%"
+			},
+			"name": "english_percentage"
+		},
+		{
+			"type": "spacer",
+			"scope": "entry",
+			"settings": {
+				"appearance": "line"
+			}
+		},
+		{
+			"type": "property",
+			"scope": "entry",
+			"settings": {
+				"type": "text",
+				"allow_multiple": "yes",
+				"prefix": "🇬🇧 ",
+				"initial_items": "0"
+			},
+			"name": "english_word"
+		},
+		{
+			"type": "spacer",
+			"scope": "entry",
+			"settings": {}
+		},
+		{
+			"type": "expression",
+			"scope": "entry",
+			"settings": {
+				"expression": "count(english_word)",
+				"suffix": " new English words"
+			},
+			"name": "english_word_count"
+		},
+		{
+			"type": "expression",
+			"scope": "entry",
+			"settings": {
+				"expression": "$previous.total_english_word_count + english_word_count",
+				"prefix": " • ",
+				"suffix": " total"
+			},
+			"name": "total_english_word_count"
+		},
+		{
+			"type": "spacer",
+			"scope": "entry",
+			"settings": {
+				"appearance": "line"
+			}
+		},
+		{
+			"type": "property",
+			"scope": "entry",
+			"settings": {
+				"prefix": "🇬🇷 ",
+				"type": "text",
+				"allow_multiple": "yes",
+				"initial_items": "0"
+			},
+			"name": "greek_word"
+		},
+		{
+			"type": "spacer",
+			"scope": "entry",
+			"settings": {}
+		},
+		{
+			"type": "expression",
+			"scope": "entry",
+			"settings": {
+				"expression": "count(greek_word)",
+				"suffix": " new Greek words"
+			},
+			"name": "greek_word_count"
+		},
+		{
+			"type": "expression",
+			"scope": "entry",
+			"settings": {
+				"expression": "$previous.total_greek_word_count + greek_word_count",
+				"suffix": " total",
+				"prefix": " • "
+			},
+			"name": "total_greek_word_count"
+		}
+	],
+	"root": [
+		{
+			"type": "property",
+			"scope": "root",
+			"settings": {
+				"type": "text",
+				"default": "Zoe"
+			},
+			"name": "child_name"
+		},
+		{
+			"type": "property",
+			"scope": "root",
+			"settings": {
+				"type": "date",
+				"appearance": "",
+				"prefix": "was born on ",
+				"default": "2019-07-12"
+			},
+			"name": "birthday"
+		},
+		{
+			"type": "action",
+			"scope": "root",
+			"settings": {
+				"visible": "edit",
+				"label": "➕ Add word set",
+				"target_preset": "new",
+				"appearance": "line",
+				"actions": [
+					{
+						"type": "add",
+						"target": "add(entry)",
+						"filter_junction": "and",
+						"set_pairs": [],
+						"filter_pairs": []
+					}
+				]
+			}
+		}
+	],
+	"charts": [
+		{
+			"type": "chart",
+			"scope": "charts",
+			"settings": {
+				"type": "line",
+				"group_by": "month",
+				"caption": "Words per month",
+				"stats": [
+					{
+						"aggregate": "sum",
+						"of": "total_english_word_count",
+						"filters": [],
+						"filter_junction": "and"
+					},
+					{
+						"aggregate": "sum",
+						"of": "total_greek_word_count"
+					}
+				]
+			}
+		},
+		{
+			"type": "chart",
+			"scope": "charts",
+			"settings": {
+				"type": "line",
+				"min_width": 300,
+				"caption": "Percentage of English words per month",
+				"number_format": "$result & \"%\"",
+				"stats": [
+					{
+						"aggregate": "average",
+						"of": "english_percentage",
+						"filters": [],
+						"filter_junction": "and"
+					}
+				]
+			}
+		}
+	]
+}
