@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	
+	<title>Zoe words: word set tracker</title>
+	<link rel="icon" href='data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><text style="font-size: 80px" x="50%" y=".85em" dominant-baseline="middle" text-anchor="middle">👶🏼</text></svg>'>
+	<link rel="stylesheet" href="https://get.mavo.io/mavo.css">
+	<link rel="stylesheet" href="../style.css">
+	<style>
+		:root {
+			--accent-color: #c34b85;
+			--icon: "👶🏼";
+		}
+		
+	</style>
+	<link rel="manifest" href="manifest.json">
+	<script type="module" src="https://projects.verou.me/h-chart/src/h-chart.js"></script>
+	<script type="module" src="https://nudeui.com/elements/index.js"></script>
+</head>
+<body mv-app="lifesheet" class="mv-autoedit" mv-storage="https://github.com/LeaVerou/my-lifesheets/zoe-words/data.json">
+	<header>
+		<h1>
+			<span class="app-icon">👶🏼</span>
+			<span class="app-name">Zoe words</span>
+		</h1>
+		<h2>learning to speak</h2>
+		<div class="mv-bar mv-ui" mv-bar="with import export"><a href="#entries" class="mv-button custom entries">Entries</a></div>
+	</header>
+
+	<main class="charts-first">
+		<a id=stats></a>
+			<div class="chart-row">
+				<figure data-type="chart" class="chart appearance-stretch type-line" style="min-width: min(300px, 100vw)">
+	
+	<h-chart id="chart21" type="line" x="a" y="c">
+		<table mv-list="chart21" mv-value="groupBy(entry, readable_datetime(entry.date, 'month'))">
+			<thead>
+				<tr>
+					<th hc-name="a">Month</th>
+<th hc-name="b">Label</th><th hc-name="c">Value</th>
+				</tr>
+			</thead>
+			<tbody mv-list-item mv-group>
+				<tr mv-if="count($items.total_english_word_count)">
+										<td>[$value]</td>
+										<td>sum of total_english_word_count</td>
+										<td>[sum($items.total_english_word_count)]</td>
+									</tr>
+<tr mv-if="count($items.total_greek_word_count)">
+										<td>[$value]</td>
+										<td>sum of total_greek_word_count</td>
+										<td>[sum($items.total_greek_word_count)]</td>
+									</tr>
+			</tbody>
+		</table>
+	</h-chart>
+	<figcaption>Words per month</figcaption></figure>
+				<figure data-type="chart" class="chart appearance-stretch type-line" style="min-width: min(300px, 100vw)">
+	
+	<h-chart id="chart23" type="line" x="a" y="c">
+		<table mv-list="chart23" mv-value="groupBy(entry, readable_datetime(entry.date, 'month'))">
+			<thead>
+				<tr>
+					<th hc-name="a">Month</th>
+<th hc-name="b">Label</th><th hc-name="c">Value</th>
+				</tr>
+			</thead>
+			<tbody mv-list-item mv-group>
+				<tr mv-if="count($items.english_percentage)">
+										<td>[$value]</td>
+										<td>average english_percentage</td>
+										<td>[average($items.english_percentage)]</td>
+									</tr>
+			</tbody>
+		</table>
+	</h-chart><script>chart23.yFormat = $result => {
+						try {
+							let $fn = Mavo.Script.$fn;
+							let $this = Mavo.all[0]?.root.getLiveData() ?? {};
+							return ($fn.concatenate($result, "%"));
+						}
+						catch (e) {
+							console.warn(e);
+							return $result;
+						}
+					};</script>
+	<figcaption>Percentage of English words per month</figcaption></figure>
+			</div>
+		<a id=entries></a>
+			<div class="field-row">
+				<span property="child_name" data-type="property" mv-default="Zoe" class="type-text"></span>
+				<time property="birthday" data-type="property" data-prefix="was born on " mv-default="2019-07-12" mv-edit-type="inline" mv-editor-type="date" class="type-date"></time>
+			</div>
+			<button data-type="action" data-show="edit" mv-action="add(entry)" class="appearance-line">➕ Add word set</button>
+		<section mv-list="entry">
+			<article mv-list-item class="entry">
+				<header class="field-row">
+					<span property="weekday" data-type="expression" data-prefix="On " mv-value="weekday(date, 'shortname')"></span>
+					<time property="date" data-type="property" data-suffix="," mv-default="[date($previous.date + 1 * day())]" mv-edit-type="inline" mv-editor-type="date" class="bold type-date"></time>
+					<span data-type="expression" data-prefix="[child_name & &quot; was &quot;]" data-suffix=" old" mv-value="duration(date - birthday, 'months')"></span>
+					<span data-type="spacer" class="appearance-stretch"></span>
+					<span property="total_word_count" data-type="expression" data-suffix=" total words," mv-value="total_english_word_count + total_greek_word_count" class="bold"></span>
+					<span property="total_new" data-type="expression" data-suffix=" new" mv-value="english_word_count + greek_word_count" class="bold"></span>
+					<span property="english_percentage" data-type="expression" data-prefix=" 🇬🇧 " data-suffix="%" mv-value="100 * (total_english_word_count / total_word_count)"></span>
+				</header>
+				<span data-type="spacer" class="appearance-line"></span>
+				<div class="field-row">
+					<span property="english_word" data-type="property" data-prefix="🇬🇧 " mv-multiple="" mv-initial-items="0" data-list-separator=", " class="type-text"></span>
+					<span data-type="spacer" class="appearance-stretch"></span>
+					<span property="english_word_count" data-type="expression" data-suffix=" new English words" mv-value="count(english_word)"></span>
+					<span property="total_english_word_count" data-type="expression" data-prefix=" • " data-suffix=" total" mv-value="$previous.total_english_word_count + english_word_count"></span>
+				</div>
+				<span data-type="spacer" class="appearance-line"></span>
+				<div class="field-row">
+					<span property="greek_word" data-type="property" data-prefix="🇬🇷 " mv-multiple="" mv-initial-items="0" data-list-separator=", " class="type-text"></span>
+					<span data-type="spacer" class="appearance-stretch"></span>
+					<span property="greek_word_count" data-type="expression" data-suffix=" new Greek words" mv-value="count(greek_word)"></span>
+					<span property="total_greek_word_count" data-type="expression" data-prefix=" • " data-suffix=" total" mv-value="$previous.total_greek_word_count + greek_word_count"></span>
+				</div>
+			</article>
+		</section>
+	</main>
+
+	<script src="https://get.mavo.io/mavo.js"></script>
+	<script>
+		Mavo.Functions.process_visible = function (value) {
+			value = Mavo.value(value);
+			return ["true", "false", "edit", "read"].includes(value) ? value : Boolean(value);
+		}; 
+	</script>
+</body>
+</html>
