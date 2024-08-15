@@ -1,6 +1,6 @@
 # My lifesheets
 
 - [🤒 MyTemp](mytemp): fever tracker
-- [😀 MyLife](mylife): entry tracker
 - [😀 Mood](mood): entry tracker
 - [👶🏼 Childcare](childcare): childcare calculator
+- [👶🏼 Zoe Words](zoe-words): learning to speak
