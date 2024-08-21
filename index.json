@@ -55,5 +55,19 @@
 		"_entryName": "entry",
 		"entry_name": "entry",
 		"entries_name": "entries"
+	},
+	"zoe-words": {
+		"name": "Zoe words",
+		"slug": "zoe-words",
+		"entry_name": "word set",
+		"entries_name": "word sets",
+		"description": "learning to speak",
+		"private": false,
+		"icon": "👶🏼",
+		"color": "#c34b85",
+		"storage_type": "",
+		"storage": "",
+		"custom_css": "",
+		"charts_placement": ""
 	}
 }
